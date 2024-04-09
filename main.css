@@ -6,17 +6,18 @@ body {
 }
 
 main {
-    background-color: wheat;
+    
     color: black;
     font-family: Arial;
     margin: 10px 20px 45px;
+    height: 0;
 }
 
 header {
     background-color: black;
     color: aqua;
     font-family: Arial;
-    margin: 0px
+    margin: 0px;
 }
 
 footer {
@@ -43,7 +44,7 @@ a:link {
 }
 
 a:visited {
-    color: grey;
+    color: yellow;
     text-decoration: none;
 }
 
