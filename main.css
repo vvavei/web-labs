@@ -27,5 +27,26 @@ footer {
 }
 
 a {
+    color: green;
     text-decoration: none;
+}
+
+a:link {
+    color: purple;
+    text-shadow: 4px 3px 3px rgba(56, 48, 3, 0.507);
+}
+
+a:visited {
+    color: grey;
+    text-decoration: none;
+}
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
+    text-shadow: 4px 3px 3px rgba(56, 48, 3, 0.507);
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
 }
