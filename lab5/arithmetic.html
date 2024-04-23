@@ -62,6 +62,14 @@
             let hi = "Приветствую вас на моей странице!\nКто не рискует, тот не пьет шампанское!";
             alert(hi);
         }
+
+        function changeOutput(buttonNum, backColor, textColor, borderStyle) {
+            let output = document.getElementById("output");
+            output.innerHTML = "Нажата кнопка "+ buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = borderStyle;  
+        }
     </script>
     <style>
         .message {
@@ -83,6 +91,12 @@
         footer {
             cursor: pointer;
         }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -99,6 +113,15 @@
         <div class = "message" onclick="showMin()">Найти разность чисел</div>
         <div class = "message" onclick="showUmnozh()">Найти произведение</div>
         <div class = "message" onclick="showDel()">Найти деление</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'dotted')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'solid')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,'green', 'purple', 'dotted')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'blue', 'white', 'double')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showHi()">
