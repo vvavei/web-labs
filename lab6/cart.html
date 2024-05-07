@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свиридова Софья Денисовна. Лабораторная работа 6</title>
+    <link rel = "stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script>
+        function calculateTotal() {
+            let balance = parseInt(document.getElementById('balance').value);
+            let cart = document.querySelectorAll('.quantity');
+            let total = 0;
+            let message = document.getElementById('result');
+
+            for (let item of cart) {
+                total += parseInt(item.value) * parseInt(item.parentNode.previousElementSibling.textContent);
+            }
+
+            if (total > balance) {
+                message.innerHTML  = "Ошибка!!! У вас недостаточно денег";
+            }
+
+            else if (total === 0) {
+                message.innerHTML  = "Ошибка!!! Выберите хотя бы один товар.";
+            } 
+
+            else {
+                message.innerHTML  = "Все успешно. Итоговая сумма: " + total + " руб.";
+            }
+        }
+    </script>
+
+    <style>
+        table {
+            width: 100%;
+            margin-top: 20px;
+            
+        }
+        th, td {
+            border: 2px solid;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: whitesmoke;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div>
+            Мой баланс (руб):
+            <input type="number" id="balance"  min="0" step="1">
+        </div>
+
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>Название товара</th>
+                    <th>Цена (руб)</th>
+                    <th>Количество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Банан</td>
+                    <td>20</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Кофе, 100 гр.</td>
+                    <td>100</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Булочка с корицей</td>
+                    <td>30</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Йогурт</td>
+                    <td>50</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Хлеб</td>
+                    <td>40</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Апельсин</td>
+                    <td>30</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Мармелад</td>
+                    <td>100</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="calculateTotal()">OK</button>
+        <div id="result"></div>
+    </main>
+
+    <footer>
+        &copy; Свиридова Софья, ФБИ-22, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
