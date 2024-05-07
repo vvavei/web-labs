@@ -26,7 +26,7 @@
             if (userNumber > number) {
                 message.innerHTML = 'Вы ввели слишком большое число';
             }
-            if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+            else if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
                 message.innerHTML = "Число должно быть в диапазоне от 1 до 100! Возможно, вы ввели не число или число, невходящее в диапазон :)";
                 count--;
             }
