@@ -91,14 +91,35 @@
                 newBlock.style.display = 'inline-block';
                 
 
-                
-
-
                 newBlock.innerHTML = `${i}`;
 
                 main.appendChild(newBlock);
             }
         }
+
+        function changeOpacity() {
+            let main = document.querySelector('main');
+            for(let i = 0; i<= 100; i+=10) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '30px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.backgroundColor = 'red';
+                newBlock.style.opacity = i / 100; 
+                newBlock.style.height = '30px';
+                newBlock.style.border = '2px solid';
+                newBlock.style.borderColor = "white";
+                newBlock.style.margin = '5px'; 
+                newBlock.style.borderRadius = "10px";
+                newBlock.style.textAlign = 'center';
+                newBlock.style.padding = '15px';
+                newBlock.style.color = 'white';
+                
+
+                newBlock.innerHTML = `${i/10}`;
+
+                main.appendChild(newBlock);
+            }
+        }    
     </script>
 </head>
 
@@ -112,7 +133,8 @@
         <input type="number" min= '1' id="blockNumberInput" placeholder="Введите количество блоков">
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
-        <button onclick="add10_80()">10 => -80</button><br>
+        <button onclick="add10_80()">10 => -80</button>
+        <button onclick="changeOpacity()">0% => 100%</button><br>
     </main>
 
     <footer>
