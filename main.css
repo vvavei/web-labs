@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: plum;
     color: maroon;
     font-family: Arial;
     margin: 0px;
@@ -15,14 +15,14 @@ main {
 
 header {
     background-color: black;
-    color: aqua;
+    color: purple;
     font-family: Arial;
     margin: 0px;
 }
 
 footer {
     background-color: black;
-    color: aqua;
+    color: purple;
     font-family: Arial;
     font-size: 12pt;
     padding: 5px;
