@@ -15,14 +15,14 @@ main {
 
 header {
     background-color: black;
-    color: purple;
+    color: aqua;
     font-family: Arial;
     margin: 0px;
 }
 
 footer {
     background-color: black;
-    color: purple;
+    color: aqua;
     font-family: Arial;
     font-size: 12pt;
     padding: 5px;
