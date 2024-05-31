@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свиридова Софья Денисовна. РГЗ</title>
+    <link rel = "stylesheet" href="../styleForRGZ.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script>
+        function convert() {
+           
+    
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(json) {
+                  
+                    let rate = json.Valute.USD.Value;
+                    let nominal = json.Valute.USD.Nominal;
+
+                    let quantity = document.getElementById('quantity').value;
+                    let cFrom = document.getElementById('cFrom').value;
+                    let cTo = document.getElementById('cTo').value;
+                    let result =  document.getElementById('result');
+
+                 
+
+                    if (cFrom == 'USD' && cTo == 'RUB') {
+                        let output = (quantity * rate) / nominal;
+                        result.innerText = output.toFixed(2) + 'RUB';
+                    } 
+                    else if (cFrom == 'RUB' && cTo == 'USD')  {
+                        let output = (quantity / rate) * nominal;
+                        result.innerText = output.toFixed(2) + 'USD';
+                    }
+                    else {
+                        result.innerText = 'Ошибка!';
+                    }
+                });
+        }        
+                
+                        
+    </script>
+    <style>
+        .yt {
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: rgb(118, 1, 53);
+            color: white;
+            width: 1300px;
+            font-size: 18pt;
+            padding: 10px;
+            display: inline-block;
+            margin: 10px;
+            box-shadow: 3px 3px 10px rgba(82, 18, 82, 0.342)
+        }
+        .rt {
+            border: 2px dotted white;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+
+<body class="bodY">
+    <header>
+        НГТУ, ФБ, РГЗ
+    </header>
+
+    <main>
+       
+       <div class="sidebar">
+            <ul class="sidebar_ul">
+                <li class="sidebar_ul_li"><a href ='web.html'>Главная</a></li>
+                <li class="sidebar_ul_li"><a href='aboutcom.html'>О компании</a></li>
+                <li class="sidebar_ul_li"><a href='news.html'>Новости</a></li>
+                <li class="sidebar_ul_li"><a href='dollar.html'>Курс валюты</a></li>
+                <li class="sidebar_ul_li"><a href='contacts.html'>Контактные данные</a></li>
+                <li class="sidebar_ul_li"><a href='video.html'>Видео</a></li>
+            </ul>   
+       </div>
+       <h1>Курс валют: калькулятор</h1>
+       <div class="yt">
+            <p>Введите сумму, которую вам нужно конвертировать:</p>
+            <input class="rt" type="number" id="quantity" min="0" oninput="value = Math.max(value,0)" placeholder="Введите сумму"><br>
+            
+            <p class="rt">Конвертировать из:</p>
+
+            <select id="cFrom" class="rt">
+                <option value="RUB">Российский рубль</option>
+                <option value="USD">Доллар</option>
+            </select><br>
+
+            <p class="rt">Конвертировать в:</p>
+
+            <select id="cTo" class="rt">
+                <option value="USD">Доллар</option>
+                <option value="RUB">Российский рубль</option>
+            </select><br>
+
+            <button class="rt" onclick="convert()">Конвертировать</button>
+
+            <p id="result" class="rt">Вывод:</p>
+       </div>
+
+      
+       
+    </main>
+    
+
+    <footer>
+        &copy; Свиридова Софья, ФБИ-22, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
