@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свиридова Софья Денисовна. Лабораторная работа 8</title>
+    <link rel = "stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <script src="get-days-count.js"></script>
+    <style>
+        .lala {
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: #550176;
+            color: white;
+            width: 1500px;
+            font-size: 30pt;
+            padding: 10px;
+            display: inline-block;
+            margin-right: 100px;
+            margin-left: 100px;
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(82, 18, 82, 0.342)
+        }
+        .btn1 {
+            padding: 10px;
+            background-color: green;
+        }
+        .inp {
+            padding: 10px;
+        }
+    
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div class="lala">
+            <div>
+                <label>Дата рождения: <input  class="inp" id="input-date" type="date"></label>
+            </div>
+            <div>
+                <button class="btn1" onclick="showDaysCount()">Показать число дней</button>
+                <button class="btn1" onclick="clearBlock()">Очистить</button>
+            </div>
+            <div id="days"></div>
+
+        </div>
+        
+       
+       
+    </main>
+
+    <footer>
+        &copy; Свиридова Софья, ФБИ-22, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
