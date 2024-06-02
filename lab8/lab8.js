@@ -20,4 +20,14 @@ function showDate() {
     out.innerHTML += "Дата и время для локали Греции: " + greekDate + "<br>";   
     out.innerHTML += "Дата и время для локали Японии: " + japanDate + "<br>"; 
     out.innerHTML += "Дата и время для локали Турции: " + turkishDate;
+
+    let additionalInf = document.getElementById('additional');
+    let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+    let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    additionalInf.innerHTML += `
+        Текущий год: ${today.getFullYear()}<br>
+        Текущий месяц: ${months[today.getMonth()]}<br>
+        Текущая дата: ${today.getDate()}<br>
+        День недели: ${daysOfWeek[today.getDay()]}
+    `;
 }
