@@ -8,16 +8,35 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-32x32.png">
     <link rel="icon" href="../favicon-16x16.png">
+    <script src="lab8.js"></script>
+    <style>
+        .lala {
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: #550176;
+            color: white;
+            width: 1500px;
+            font-size: 30pt;
+            padding: 10px;
+            display: inline-block;
+            margin-right: 100px;
+            margin-left: 100px;
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(82, 18, 82, 0.342)
+        }
+    
+    </style>
     
 </head>
 
-<body>
+<body onload="showDate()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
     </header>
 
     <main>
-        <li><a href="date.html">Дата</a></li>
+        <div class="lala" id="current-date"></div>
+       
        
        
     </main>
