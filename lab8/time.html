@@ -25,7 +25,37 @@
             font-size: 90px;
             margin-left: 770px;
             margin-top: 50px;
-            }
+        }
+
+        #clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #clock {
+            width: 200px;
+            height: 200px;
+            border: 5px dotted rgb(0, 0, 0);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            margin-left: 720px;
+            margin-top: 200px;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(233, 252, 128, 0.745);
+        }
+        #second-hand {
+            width: 5px;
+            height: 100px;
+            background: rgb(41, 35, 1);
+            position: absolute;
+            bottom: 50%;
+            transform-origin: bottom;
+            transform: rotate(0deg);
+            transition: transform 1s linear;
+        }
     </style>
     
     
@@ -37,8 +67,12 @@
         <div class="timE" id="time">00:00:00</div>
     </header>
 
-    <main>
+    <main onload="showhand()">
         <div class="sec1" id="seconds">00</div>
+        <div id="clock-container"></div>
+        <div id="clock">
+            <div id="second-hand"></div>
+        </div>
         
     </main>
 
