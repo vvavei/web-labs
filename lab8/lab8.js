@@ -39,7 +39,7 @@ function showDayOfWeek() {
     let date = new Date(year, month, day);
     let daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
     let dayOfWeek = daysOfWeek[date.getDay()];
-    let resultDiv = document.getElementById('day-of-week-result');
+    let resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `День недели: ${dayOfWeek}`;
 }
 
